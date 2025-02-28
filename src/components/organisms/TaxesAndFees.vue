@@ -83,7 +83,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, defineProps, watch } from "vue";
+import { ref, watch } from "vue";
 import Text from "../atoms/Text.vue";
 import TextInput from "../atoms/TextInput.vue";
 import TypeSelect from "../atoms/TypeSelect.vue";
