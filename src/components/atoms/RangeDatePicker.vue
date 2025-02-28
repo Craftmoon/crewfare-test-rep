@@ -17,6 +17,8 @@
           v-model:is-open="open"
           format="MM/dd/yyyy"
           :disabled="disabled"
+          :min-date="minDate"
+          :max-date="maxDate"
         >
           <template #dp-input>
             <div class="flex items-center justify-between px-4 py-2 w-full">
@@ -46,6 +48,8 @@ const props = defineProps<{
   label?: string;
   placeholder?: string;
   disabled?: boolean;
+  minDate?: Date;
+  maxDate?: Date;
 }>();
 
 const emit = defineEmits<{

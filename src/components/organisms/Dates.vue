@@ -33,6 +33,8 @@
                 :model-value="[date.startDate, date.endDate]"
                 placeholder="Select date range"
                 :disabled="areDatesDisabled"
+                :min-date="bookableDates?.[0]"
+                :max-date="bookableDates?.[1]"
                 @update:model-value="(dates) => updateEventDate(index, dates)"
               />
             </div>
@@ -65,6 +67,8 @@
         :model-value="checkInOut"
         placeholder="Select date range"
         :disabled="areDatesDisabled"
+        :min-date="bookableDates?.[0]"
+        :max-date="bookableDates?.[1]"
         @update:model-value="updateCheckInOut"
       />
     </LabelledFormComp>
