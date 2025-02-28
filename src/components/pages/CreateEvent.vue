@@ -44,7 +44,7 @@ const formData = ref<FormData>({
   minimumNights: 1,
   taxesAndFees: [],
   bookableDates: null,
-  eventDates: [{ startDate: new Date(), endDate: new Date() }],
+  eventDates: [{ startDate: null, endDate: null }],
   checkInOut: null,
 });
 

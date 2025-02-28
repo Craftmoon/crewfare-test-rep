@@ -30,7 +30,11 @@
           <div class="flex items-center w-full">
             <div class="flex-grow">
               <RangeDatePicker
-                :model-value="[date.startDate, date.endDate]"
+                :model-value="
+                  date.startDate && date.endDate
+                    ? [date.startDate, date.endDate]
+                    : null
+                "
                 placeholder="Select date range"
                 :disabled="areDatesDisabled"
                 :min-date="bookableDates?.[0]"
@@ -146,8 +150,8 @@ const addEventDate = () => {
   const newDates = [
     ...props.eventDates,
     {
-      startDate: new Date(),
-      endDate: new Date(),
+      startDate: null,
+      endDate: null,
     },
   ];
   emit("update:event-dates", newDates);

@@ -25,8 +25,8 @@ export interface TaxFee {
 }
 
 export interface EventDate {
-  startDate: Date;
-  endDate: Date;
+  startDate: Date | null;
+  endDate: Date | null;
 }
 
 export interface FormData {
