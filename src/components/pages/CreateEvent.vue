@@ -43,9 +43,9 @@ const formData = ref<FormData>({
   featuredHotelsTitle: "Featured Hotels",
   minimumNights: 1,
   taxesAndFees: [],
-  bookableDates: [new Date(), new Date()],
+  bookableDates: null,
   eventDates: [{ startDate: new Date(), endDate: new Date() }],
-  checkInOut: [new Date(), new Date()],
+  checkInOut: null,
 });
 
 const { currentStep, goToNext, goToPrevious, goToStep } = useStepNavigation(

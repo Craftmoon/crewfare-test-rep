@@ -42,7 +42,7 @@ export interface FormData {
   featuredHotelsTitle?: string;
   minimumNights?: number;
   taxesAndFees: TaxFee[];
-  bookableDates: [Date, Date];
-  checkInOut: [Date, Date];
+  bookableDates: [Date, Date] | null;
+  checkInOut: [Date, Date] | null;
   eventDates: EventDate[];
 }

@@ -20,6 +20,7 @@
       <RangeDatePicker
         :model-value="bookableDates"
         placeholder="Select date range"
+        :disabled="false"
         @update:model-value="updateBookableDates"
       />
     </div>
@@ -31,6 +32,7 @@
               <RangeDatePicker
                 :model-value="[date.startDate, date.endDate]"
                 placeholder="Select date range"
+                :disabled="areDatesDisabled"
                 @update:model-value="(dates) => updateEventDate(index, dates)"
               />
             </div>
@@ -62,6 +64,7 @@
       <RangeDatePicker
         :model-value="checkInOut"
         placeholder="Select date range"
+        :disabled="areDatesDisabled"
         @update:model-value="updateCheckInOut"
       />
     </LabelledFormComp>
@@ -82,7 +85,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch } from "vue";
+import { ref, watch, computed } from "vue";
 import FormFooter from "../molecules/FormFooter.vue";
 import { TaxFee, EventDate } from "../domain/interfaces";
 import { TaxFeeTypes } from "../domain/constants";
@@ -94,9 +97,9 @@ import Text from "../atoms/Text.vue";
 
 const props = defineProps<{
   taxesAndFees: TaxFee[];
-  bookableDates: [Date, Date];
+  bookableDates: [Date, Date] | null;
   eventDates: EventDate[];
-  checkInOut: [Date, Date];
+  checkInOut: [Date, Date] | null;
 }>();
 
 const emit = defineEmits<{
@@ -163,4 +166,6 @@ const handleSave = () => {
   emit("save");
   return true;
 };
+
+const areDatesDisabled = computed(() => !props.bookableDates);
 </script>

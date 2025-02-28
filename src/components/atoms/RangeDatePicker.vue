@@ -2,19 +2,21 @@
   <div class="relative mb-5">
     <div class="flex items-center">
       <div
-        class="w-full bg-cfLightGray rounded-lg cursor-pointer"
-        @click="open = true"
+        class="w-full bg-cfLightGray rounded-lg"
+        :class="[disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer']"
+        @click="!disabled && (open = true)"
       >
         <VueDatePicker
           v-model="localDate"
           :enable-time-picker="false"
           :range="true"
           :auto-apply="true"
-          :clickable="true"
+          :clickable="!disabled"
           :teleport="true"
           :teleport-to="'.relative'"
           v-model:is-open="open"
           format="MM/dd/yyyy"
+          :disabled="disabled"
         >
           <template #dp-input>
             <div class="flex items-center justify-between px-4 py-2 w-full">
@@ -43,6 +45,7 @@ const props = defineProps<{
   modelValue: [Date, Date] | null;
   label?: string;
   placeholder?: string;
+  disabled?: boolean;
 }>();
 
 const emit = defineEmits<{
