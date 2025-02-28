@@ -32,8 +32,8 @@ A Vue 3 application for managing event creation and configuration, built with mo
 1. Clone the repository
 
    ```bash
-   git clone https://github.com/Craftmoon/crewfare-test.git
-   cd crewfare-test
+   git clone https://github.com/Craftmoon/crewfare-test-rep.git
+   cd crewfare-test-rep
    ```
 
 2. Install dependencies
@@ -90,6 +90,9 @@ The project uses Vitest for unit testing. Tests are located alongside their comp
 yarn test
 ```
 
+Test coverage (all atomic design components)
+![Screenshot from 2025-02-28 00-24-46](https://github.com/user-attachments/assets/1179b16f-4a71-4317-b6f3-0fb4f54fec17)
+
 ## 📚 Storybook
 
 Component documentation and development environment is available through Storybook. Run it using:
@@ -106,3 +109,13 @@ The project uses Tailwind CSS for styling with custom configuration including:
 - Custom spacing
 - Custom font family (Poppins)
 - Responsive design utilities
+
+Project screenshots
+
+![Screenshot from 2025-02-27 18-02-01](https://github.com/user-attachments/assets/b95a4e88-8176-42b0-a892-6edcd7b82aed)
+
+![Screenshot from 2025-02-27 18-02-40](https://github.com/user-attachments/assets/eb1dae1f-1c3e-4621-a392-c7f567620ddb)
+
+![Screenshot from 2025-02-27 22-00-42](https://github.com/user-attachments/assets/8332f0d2-0aba-4f51-a352-e7e100aeb0fd)
+
+![Screenshot from 2025-02-27 22-03-18](https://github.com/user-attachments/assets/c8e81b5d-d366-4e4e-89f2-cc882d459ce2)
