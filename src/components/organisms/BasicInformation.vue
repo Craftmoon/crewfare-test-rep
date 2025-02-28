@@ -29,6 +29,7 @@
           <ImageBanner
             :show-overlay="overlayTitleOnBanner"
             :overlay-text="overlayTitle"
+            :model-value="bannerImage"
             @update:image="$emit('update:bannerImage', $event)"
           />
         </LabelledFormComp>

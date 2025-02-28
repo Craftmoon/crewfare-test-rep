@@ -56,11 +56,13 @@ import Text from "./Text.vue";
 const props = defineProps<{
   showOverlay?: boolean;
   overlayText?: string;
+  modelValue?: File;
 }>();
 
 const emit = defineEmits<{
   "update:image": [File];
   "update:overlayText": [string];
+  "update:modelValue": [File];
 }>();
 
 const imageUrl = ref<string>("");
@@ -75,6 +77,21 @@ watch(
   }
 );
 
+// Add watch for modelValue prop
+watch(
+  () => props.modelValue,
+  (newValue) => {
+    if (newValue) {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        imageUrl.value = e.target?.result as string;
+      };
+      reader.readAsDataURL(newValue);
+    }
+  },
+  { immediate: true }
+);
+
 const handleImageUpload = (event: Event) => {
   const target = event.target as HTMLInputElement;
   if (!target.files?.length) return;
@@ -85,6 +102,7 @@ const handleImageUpload = (event: Event) => {
     reader.onload = (e) => {
       imageUrl.value = e.target?.result as string;
       emit("update:image", file);
+      emit("update:modelValue", file);
     };
     reader.readAsDataURL(file);
   }

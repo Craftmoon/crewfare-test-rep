@@ -36,6 +36,7 @@ const formData = ref<FormData>({
   enabled: true,
   overlayTitleOnBanner: false,
   overlayTitle: "",
+  bannerImage: undefined,
   subdomain: "",
   eventAddress: "",
   venueName: "",
@@ -143,6 +144,7 @@ const handleStepError = (stepIndex: number, hasError: boolean) => {
             <BasicInformation
               v-if="currentStep === 0"
               v-bind="formData"
+              :banner-image="formData.bannerImage"
               @error-change="handleStepError(0, $event)"
               @update:eventType="formData.eventType = $event"
               @update:eventName="formData.eventName = $event"
@@ -151,6 +153,7 @@ const handleStepError = (stepIndex: number, hasError: boolean) => {
                 formData.overlayTitleOnBanner = $event
               "
               @update:overlayTitle="formData.overlayTitle = $event"
+              @update:bannerImage="formData.bannerImage = $event"
               @save="handleSave"
               @back="handleBack"
               @forward="handleForward"
