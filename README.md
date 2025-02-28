@@ -114,8 +114,6 @@ Project screenshots
 
 ![Screenshot from 2025-02-27 18-02-01](https://github.com/user-attachments/assets/b95a4e88-8176-42b0-a892-6edcd7b82aed)
 
-![Screenshot from 2025-02-27 18-02-40](https://github.com/user-attachments/assets/eb1dae1f-1c3e-4621-a392-c7f567620ddb)
-
 ![Screenshot from 2025-02-27 22-00-42](https://github.com/user-attachments/assets/8332f0d2-0aba-4f51-a352-e7e100aeb0fd)
 
 ![Screenshot from 2025-02-27 22-03-18](https://github.com/user-attachments/assets/c8e81b5d-d366-4e4e-89f2-cc882d459ce2)
