@@ -60,7 +60,7 @@
     </div>
     <LabelledFormComp label="Default Check-In & Check-Out Dates">
       <RangeDatePicker
-        :model-value="checkInAndOut"
+        :model-value="checkInOut"
         placeholder="Select date range"
         @update:model-value="updateCheckInOut"
       />
@@ -96,7 +96,7 @@ const props = defineProps<{
   taxesAndFees: TaxFee[];
   bookableDates: [Date, Date];
   eventDates: EventDate[];
-  checkInAndOut: [Date, Date];
+  checkInOut: [Date, Date];
 }>();
 
 const emit = defineEmits<{

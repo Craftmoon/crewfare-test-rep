@@ -45,7 +45,7 @@ const formData = ref<FormData>({
   taxesAndFees: [],
   bookableDates: [new Date(), new Date()],
   eventDates: [{ startDate: new Date(), endDate: new Date() }],
-  checkInAndOut: [new Date(), new Date()],
+  checkInOut: [new Date(), new Date()],
 });
 
 const { currentStep, goToNext, goToPrevious, goToStep } = useStepNavigation(
@@ -184,11 +184,11 @@ const handleStepError = (stepIndex: number, hasError: boolean) => {
               :taxes-and-fees="formData.taxesAndFees"
               :bookable-dates="formData.bookableDates"
               :event-dates="formData.eventDates"
-              :check-in-out="formData.checkInAndOut"
+              :check-in-out="formData.checkInOut"
               @update:taxes-and-fees="formData.taxesAndFees = $event"
               @update:bookable-dates="formData.bookableDates = $event"
               @update:event-dates="formData.eventDates = $event"
-              @update:check-in-out="formData.checkInAndOut = $event"
+              @update:check-in-out="formData.checkInOut = $event"
               @error-change="handleStepError(2, $event)"
               @save="handleSave"
               @back="handleBack"

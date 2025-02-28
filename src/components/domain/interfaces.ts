@@ -43,6 +43,6 @@ export interface FormData {
   minimumNights?: number;
   taxesAndFees: TaxFee[];
   bookableDates: [Date, Date];
-  checkInAndOut: [Date, Date];
+  checkInOut: [Date, Date];
   eventDates: EventDate[];
 }
