@@ -104,18 +104,21 @@ const errors = ref({
 const validateForm = () => {
   let isValid = true;
   errors.value.eventName = "";
+  const isEventNameEmpty = !props.eventName?.trim();
 
-  if (!props.eventName.trim()) {
+  if (isEventNameEmpty) {
     errors.value.eventName = "Please enter the name of the event";
     isValid = false;
   }
 
   emit("error-change", !isValid);
+
   return isValid;
 };
 
 const handleSave = () => {
-  if (validateForm()) {
+  const isFormValid = validateForm();
+  if (isFormValid) {
     if (props.isLastStep) {
       alert("Form submitted successfully!\n" + JSON.stringify(props, null, 2));
       emit("save");
