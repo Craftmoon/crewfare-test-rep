@@ -66,7 +66,8 @@ const validateAllSteps = () => {
 };
 
 const handleSave = () => {
-  if (currentStep.value === steps.value.length - 1) {
+  const lastStep = currentStep.value === steps.value.length - 1;
+  if (lastStep) {
     const allStepsValid = validateAllSteps();
     if (allStepsValid) {
       steps.value.forEach((step) => {
@@ -77,13 +78,19 @@ const handleSave = () => {
         "Form submitted successfully!\n" +
           JSON.stringify(formData.value, null, 2)
       );
+
       return true;
     }
+
     return false;
   } else {
-    if (!steps.value[currentStep.value].hasError) {
+    const isCurrentStepValid = !steps.value[currentStep.value].hasError;
+
+    if (isCurrentStepValid) {
       steps.value[currentStep.value].isCompleted = true;
+
       currentStep.value = currentStep.value + 1;
+
       return true;
     }
     return false;
@@ -96,13 +103,6 @@ const handleBack = () => {
 
 const handleForward = () => {
   goToNext();
-};
-
-const updateFormData = <K extends keyof FormData>(
-  field: K,
-  value: FormData[K]
-) => {
-  formData.value[field] = value;
 };
 
 const handleStepError = (stepIndex: number, hasError: boolean) => {
@@ -120,8 +120,9 @@ const handleStepError = (stepIndex: number, hasError: boolean) => {
             weight="font-bold"
             color="text-white"
             class="mb-5"
-            >Create Event</Text
           >
+            Create Event
+          </Text>
           <Stepper
             :current-step="currentStep"
             :steps="steps"
