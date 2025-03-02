@@ -64,7 +64,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, watch } from "vue";
+import { ref, watch } from "vue";
 import { EventType } from "../domain/constants";
 import FormFooter from "../molecules/FormFooter.vue";
 import ToggleButton from "../atoms/ToggleButton.vue";
@@ -119,12 +119,7 @@ const validateForm = () => {
 const handleSave = () => {
   const isFormValid = validateForm();
   if (isFormValid) {
-    if (props.isLastStep) {
-      alert("Form submitted successfully!\n" + JSON.stringify(props, null, 2));
-      emit("save");
-    } else {
-      emit("forward");
-    }
+    emit("save");
     return true;
   }
   return false;

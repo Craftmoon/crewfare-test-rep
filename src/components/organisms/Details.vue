@@ -116,11 +116,7 @@ const validateForm = () => {
 
 const handleSave = () => {
   if (validateForm()) {
-    if (props.isLastStep) {
-      emit("save");
-    } else {
-      emit("forward");
-    }
+    emit("save");
     return true;
   }
   return false;
