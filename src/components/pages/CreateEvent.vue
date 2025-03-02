@@ -144,7 +144,11 @@ const handleStepError = (stepIndex: number, hasError: boolean) => {
           <div class="w-full">
             <BasicInformation
               v-if="currentStep === 0"
-              v-bind="formData"
+              :event-type="formData.eventType"
+              :event-name="formData.eventName"
+              :enabled="formData.enabled"
+              :overlay-title-on-banner="formData.overlayTitleOnBanner"
+              :overlay-title="formData.overlayTitle"
               :banner-image="formData.bannerImage"
               @error-change="handleStepError(0, $event)"
               @update:eventType="formData.eventType = $event"
