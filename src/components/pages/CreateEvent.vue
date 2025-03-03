@@ -57,7 +57,8 @@ const handleStepClick = (stepIndex: number) => {
 };
 
 const validateAllSteps = () => {
-  if (currentStep.value < steps.value.length - 1) {
+  const isLastStep = currentStep.value === steps.value.length - 1;
+  if (isLastStep) {
     return !steps.value[currentStep.value].hasError;
   }
 
